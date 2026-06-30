@@ -1,0 +1,54 @@
+---
+/**
+ * Gallery.astro — the 3D Architectural Visualization section.
+ *
+ * Renders a `<section id="gallery">` (the exact anchor target for the Hero
+ * "View 3D Renders" CTA) presenting six placeholder high-resolution renders in
+ * a CSS-columns masonry layout. The container uses the exact Tailwind column
+ * utilities `columns-1 md:columns-2 lg:columns-3 gap-4`.
+ *
+ * Each image:
+ *   - uses native `loading="lazy"` to defer offscreen loading,
+ *   - carries meaningful, non-empty `alt` text from the gallery data,
+ *   - gains a hover zoom/brightness effect via `transition` + `hover:` utilities.
+ *
+ * Each image is wrapped so it never splits across columns (`break-inside-avoid`)
+ * and includes bottom spacing (`mb-4`) for the masonry rhythm. No client-side
+ * JavaScript is shipped — hover and lazy loading are native browser features.
+ *
+ * Requirements: 7.1, 7.2, 7.3, 7.4, 9.2, 3.1
+ */
+import { galleryImages } from "../data/gallery";
+---
+
+<section id="gallery" class="bg-neutral-950 px-6 py-20 md:py-28">
+  <div class="mx-auto max-w-6xl">
+    <header class="mb-12">
+      <p class="mb-3 text-sm font-medium tracking-widest text-accent uppercase">
+        3D Architectural Visualization
+      </p>
+      <h2 class="text-3xl font-bold text-neutral-50 md:text-4xl">
+        Photorealistic Renders
+      </h2>
+      <p class="mt-4 max-w-2xl text-neutral-400">
+        A selection of exterior and interior architectural visualizations
+        crafted for photorealistic lighting, materials, and composition.
+      </p>
+    </header>
+
+    <div class="columns-1 md:columns-2 lg:columns-3 gap-4">
+      {
+        galleryImages.map((image) => (
+          <div class="mb-4 break-inside-avoid overflow-hidden rounded-lg">
+            <img
+              src={image.src}
+              alt={image.alt}
+              loading="lazy"
+              class="w-full rounded-lg transition duration-300 ease-out hover:scale-105 hover:brightness-110"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

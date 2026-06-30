@@ -1,0 +1,50 @@
+---
+/**
+ * ProjectCard.astro — reusable card rendering a single software engineering project.
+ *
+ * Accepts a `Project` and renders its title, an architecture-focused
+ * description, the tech stack as labeled tags, a "GitHub Repository" link,
+ * and a "Live Demo" link. Uses neutral theme tokens for the card surface and
+ * the single accent color for tags and links.
+ *
+ * Requirements: 6.2, 6.3, 6.4, 6.5, 6.6, 6.7
+ */
+import type { Project } from "../data/projects.ts";
+
+const { title, description, tech, githubUrl, demoUrl } = Astro.props as Project;
+---
+
+<article
+  class="flex h-full flex-col rounded-xl border border-neutral-800 bg-neutral-900 p-6 transition-colors hover:border-neutral-700"
+>
+  <h3 class="text-xl font-semibold text-neutral-50">{title}</h3>
+
+  <p class="mt-3 flex-grow text-sm leading-relaxed text-neutral-300">
+    {description}
+  </p>
+
+  <ul class="mt-5 flex flex-wrap gap-2" aria-label="Tech stack">
+    {
+      tech.map((item) => (
+        <li class="rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
+          {item}
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="mt-6 flex flex-wrap gap-4 text-sm font-medium">
+    <a
+      href={githubUrl}
+      class="text-accent underline-offset-4 transition-colors hover:underline focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+    >
+      GitHub Repository
+    </a>
+    <a
+      href={demoUrl}
+      class="text-accent underline-offset-4 transition-colors hover:underline focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+    >
+      Live Demo
+    </a>
+  </div>
+</article>

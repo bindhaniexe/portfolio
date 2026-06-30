@@ -1,0 +1,25 @@
+---
+/**
+ * index.astro — Portfolio home page
+ *
+ * Composes the five section components inside the shared Layout shell.
+ * Sections are rendered in the required order:
+ *   Hero → Skills → Projects → Gallery → Footer
+ *
+ * Requirements: 1.6, 1.7
+ */
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Skills from "../components/Skills.astro";
+import Projects from "../components/Projects.astro";
+import Gallery from "../components/Gallery.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Your Name | Full-Stack Engineer & 3D Architectural Visualizer">
+  <Hero />
+  <Skills />
+  <Projects />
+  <Gallery />
+  <Footer />
+</Layout>

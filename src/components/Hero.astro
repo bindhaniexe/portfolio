@@ -1,0 +1,61 @@
+---
+/**
+ * Hero.astro — Hero_Section
+ *
+ * The introductory section that presents the owner's identity, a subheadline,
+ * and two call-to-action anchors for in-page navigation.
+ *
+ * - Single <h1> identity (Requirement 4.1)
+ * - Subheadline referencing robust system architecture + photorealistic design
+ *   (Requirement 4.2)
+ * - "View Engineering Projects" CTA → #projects (Requirements 4.3, 4.5)
+ * - "View 3D Renders" CTA → #gallery (Requirements 4.4, 4.6)
+ * - Semantic <section> markup (Requirement 3.1)
+ *
+ * Navigation is framework-free: native anchor links scroll to the section
+ * `id`s defined by Projects.astro (#projects) and Gallery.astro (#gallery).
+ * The monochromatic theme tokens (neutral scale + `--color-accent`) are
+ * consumed via Tailwind utilities (`text-accent`, `bg-accent`, etc.).
+ */
+---
+
+<section
+  id="hero"
+  class="relative flex min-h-[80vh] items-center bg-neutral-950 px-6 py-24 text-neutral-50 sm:px-8 md:min-h-screen md:py-32"
+>
+  <div class="mx-auto w-full max-w-4xl">
+    <p class="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-accent sm:text-base">
+      Building &amp; Visualizing
+    </p>
+
+    <h1
+      class="text-balance text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
+    >
+      Full-Stack Software Engineer &amp; 3D Architectural Visualizer
+    </h1>
+
+    <p
+      class="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-300 sm:text-xl md:mt-8"
+    >
+      Focused on robust system architecture and photorealistic design — engineering
+      scalable, secure software while crafting immersive, photorealistic 3D
+      architectural visualizations.
+    </p>
+
+    <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center md:mt-12">
+      <a
+        href="#projects"
+        class="inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 text-base font-semibold text-neutral-50 transition-colors duration-200 hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
+      >
+        View Engineering Projects
+      </a>
+
+      <a
+        href="#gallery"
+        class="inline-flex items-center justify-center rounded-md border border-accent px-6 py-3 text-base font-semibold text-accent transition-colors duration-200 hover:bg-accent hover:text-neutral-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
+      >
+        View 3D Renders
+      </a>
+    </div>
+  </div>
+</section>

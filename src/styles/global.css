@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/*
+ * Monochromatic theme (Tailwind CSS v4, CSS-first @theme).
+ *
+ * The palette is intentionally restricted to a single neutral grayscale ramp
+ * plus exactly ONE accent color (`--color-accent`). This keeps the portfolio
+ * visually monochromatic while reserving the accent for interactive and
+ * emphasized elements. (Requirements 2.1, 2.2, 3.5)
+ *
+ * Tokens here are consumed by Tailwind utilities, e.g. `bg-neutral-950`,
+ * `text-neutral-50`, `text-accent`, `bg-accent`, `border-accent`, etc.
+ */
+@theme {
+  /* Neutral grayscale scale (light → dark) */
+  --color-neutral-50: oklch(0.985 0 0);
+  --color-neutral-100: oklch(0.97 0 0);
+  --color-neutral-200: oklch(0.922 0 0);
+  --color-neutral-300: oklch(0.87 0 0);
+  --color-neutral-400: oklch(0.708 0 0);
+  --color-neutral-500: oklch(0.556 0 0);
+  --color-neutral-600: oklch(0.439 0 0);
+  --color-neutral-700: oklch(0.371 0 0);
+  --color-neutral-800: oklch(0.269 0 0);
+  --color-neutral-900: oklch(0.205 0 0);
+  --color-neutral-950: oklch(0.145 0 0);
+
+  /* Single accent color — the only non-neutral hue in the palette */
+  --color-accent: oklch(0.62 0.19 256);
+}
