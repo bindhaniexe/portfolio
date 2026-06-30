@@ -32,10 +32,10 @@ export const projects: Project[] = [
     demoUrl: "#",
   },
   {
-    title: "Real-Time 3D Hand Tracking in Unity",
+    title: "DevLink — Developer Social API",
     description:
-      "Real-time 3D hand-tracking pipeline using a Mediapipe 21-point skeleton and OpenCV, streaming joint coordinates to Unity over UDP at 60fps with ~50ms end-to-end latency for VR gesture interaction.",
-    tech: ["Python", "OpenCV", "Mediapipe", "Unity (C#)", "UDP Communication"],
+      "RESTful social network API for developers to share posts, follow each other, and discover projects. Built with stateless JWT auth, role-based access control, paginated feeds, and full test coverage with JUnit and Mockito.",
+    tech: ["Spring Boot", "PostgreSQL", "JWT", "JUnit", "Mockito", "Docker"],
     githubUrl: "#",
     demoUrl: "#",
   },

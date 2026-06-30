@@ -1,12 +1,16 @@
 export interface SkillCategory {
-  name: "Languages" | "Frameworks & Libraries" | "Tools & Platforms" | "Design";
+  name:
+    | "Languages"
+    | "Frameworks & Libraries"
+    | "Tools & Platforms"
+    | "Databases & DevOps";
   skills: string[];
 }
 
 export const skillCategories: SkillCategory[] = [
   {
     name: "Languages",
-    skills: ["Java", "Python", "JavaScript (ES6+)", "HTML5", "CSS3", "SQL", "C", "C++"],
+    skills: ["Java", "Python", "JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3", "SQL", "C", "C++"],
   },
   {
     name: "Frameworks & Libraries",
@@ -20,6 +24,7 @@ export const skillCategories: SkillCategory[] = [
       "Expo",
       "jQuery",
       "Bootstrap",
+      "Tailwind CSS",
     ],
   },
   {
@@ -28,18 +33,25 @@ export const skillCategories: SkillCategory[] = [
       "Git",
       "GitHub",
       "VS Code",
-      "Eclipse",
       "IntelliJ IDEA",
-      "Linux/UNIX shell",
-      "Docker (Basic)",
+      "Eclipse",
+      "Linux / UNIX shell",
+      "Docker",
       "AWS EC2",
-      "MySQL",
-      "MongoDB",
-      "PostgreSQL",
+      "Figma",
+      "Postman",
     ],
   },
   {
-    name: "Design",
-    skills: ["Figma", "3D Architectural Visualization (Exterior and Interior)"],
+    name: "Databases & DevOps",
+    skills: [
+      "MySQL",
+      "MongoDB",
+      "PostgreSQL",
+      "REST APIs",
+      "JWT / Spring Security",
+      "CI / CD (GitHub Actions)",
+      "Docker Compose",
+    ],
   },
 ];
